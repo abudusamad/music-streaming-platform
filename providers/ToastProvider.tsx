@@ -1,5 +1,4 @@
 "use client";
-
 import { Toaster } from "react-hot-toast";
 
 const ToastProvider = () => {
@@ -9,7 +8,7 @@ const ToastProvider = () => {
 				style: {
 					background: "#333",
 					color: "#fff",
-                },
+				},
 			}}
 		/>
 	);
