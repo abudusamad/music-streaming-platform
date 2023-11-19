@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { IconType } from "react-icons";
+import { twMerge } from "tailwind-merge";
 
 interface SidebarItemProps {
     label: string;
@@ -14,12 +16,35 @@ const SidebarItem = ({
     href,
     active,
 }:SidebarItemProps) => {
-    return (<div className="flex items-center flex-cols">
-        <div>
-            <Icon className="h-6 w-6" />
-        </div>
+    return (
+        <Link href={href}
+            className={
+                twMerge(`
+                flex
+                items-center
+                flex-row
+                h-auto
+                w-full
+                gap-x-4
+                text-md
+                font-medium
+                hover:text-white
+                transition
+                text-neutral-400
+                py-1
 
-    </div> );
+                `,
+                active && "text-white"
+                )
+
+            }
+        
+        >
+            <Icon size={26} />
+            <p className="truncate w-full">{label}</p>
+        </Link>
+        
+    )
 }
  
 export default SidebarItem;

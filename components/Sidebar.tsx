@@ -29,7 +29,7 @@ const Sidebar = ({ children }: SidebarProps) => {
             active: pathname === "/search"
         }
     ],[pathname])
-    return <div >
+    return <div  className="hidden md:flex flex-col gap-y-2 bg-black w-[300px] p-2">
         <div>
             {routes.map((route) => (
                 <SidebarItem
