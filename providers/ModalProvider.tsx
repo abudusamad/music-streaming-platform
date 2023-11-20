@@ -1,5 +1,6 @@
 "use client";
 
+import Modal from "@/components/Modal";
 import { ProductWithPrice } from "@/types";
 import { useEffect, useState } from "react";
 interface ModalProviderProps {
@@ -19,7 +20,14 @@ const ModalProvider = ({product}:ModalProviderProps) => {
     }
     return (
         <div>
-
+            <Modal
+                isOpen={true}
+                onClose={() => console.log("close")}
+                onChange={(open) => console.log(open)}
+                title="Modal"
+                description="Modal description"
+            
+            />
         </div>
     );
 }
