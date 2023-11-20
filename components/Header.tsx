@@ -92,7 +92,26 @@ const Header = ({ children, className }: HeaderProps) => {
                 <div className="flex justify-between items-center gap-x-4">
                     <>
                         <div>
-                            <Button>
+                            <Button
+                                className="bg-transparent 
+                                text-neutral-300
+                                font-medium"
+                            >
+                                
+
+                                
+                                Sign up
+
+                            </Button>
+                        </div>
+                         <div>
+                            <Button
+                                className="bg-white px-6 py-1"
+                            >
+                                
+
+                                
+                                Sign in
 
                             </Button>
                         </div>
