@@ -1,6 +1,7 @@
 import { AiOutlinePlus } from "react-icons/ai";
 import { RxCaretRight } from "react-icons/rx";
 import { TbPlaylist } from "react-icons/tb";
+import { TooltipMenu } from "./Tooltip";
 
 const Library = () => {
 	return (
@@ -11,8 +12,8 @@ const Library = () => {
 						className="text-neutral-400  hover:text-white transition"
 						size={26}
 					/>
-					<p className="text-neutral-400 font-medium hover:text-white transition-all">
-						Your Library
+                    <p className="text-neutral-400 font-medium hover:text-white transition-all">
+                        Your Library
 					</p>
 				</div>
 				<div className="flex items-center justify-center gap-x-2">
