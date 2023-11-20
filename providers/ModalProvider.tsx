@@ -22,12 +22,14 @@ const ModalProvider = ({product}:ModalProviderProps) => {
         <div>
             <Modal
                 isOpen={true}
-                onClose={() => console.log("close")}
-                onChange={(open) => console.log(open)}
-                title="Modal"
-                description="Modal description"
+                onChange={() => {}}
+                title="Test Title"
+                description="Test Description"
             
-            />
+            >
+            Test Children
+            </Modal>
+
         </div>
     );
 }
