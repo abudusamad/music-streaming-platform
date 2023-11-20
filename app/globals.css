@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
 html,
 body,
-:root{
-  @apply bg-black h-full text-white
+:root {
+  height: 100%;
+  background-color: black;
+  color-scheme: dark;
 }
