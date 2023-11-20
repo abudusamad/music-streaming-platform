@@ -48,7 +48,7 @@ const Sidebar = ({ children }: SidebarProps) => {
         "
 			>
 				<Box>
-					<div className="flex flex-col gap-y-4 px-5 py-4">
+					<div className="flex flex-col gap-y-4 py-4 px-5">
 						{routes.map((item) => (
 							<SidebarItem key={item.label} {...item} />
 						))}
@@ -56,7 +56,7 @@ const Sidebar = ({ children }: SidebarProps) => {
 				</Box>
 				<Box className="overflow-y-auto h-full">Libaray</Box>
 			</div>
-			<main className="h-full flex flex-1 overflow-y-auto py-2">
+			<main className="h-full flex-1 overflow-y-auto py-2">
 				{children}
 			</main>
 		</div>

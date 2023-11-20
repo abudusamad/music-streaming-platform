@@ -88,37 +88,25 @@ const Header = ({ children, className }: HeaderProps) => {
 					>
 						<BiSearch className="text-black" size={20} />
 					</button>
-                </div>
-                <div className="flex justify-between items-center gap-x-4">
-                    <>
-                        <div>
-                            <Button
-                                className="bg-transparent 
+				</div>
+				<div className="flex justify-between items-center gap-x-4">
+					<>
+						<div>
+							<Button
+								className="bg-transparent 
                                 text-neutral-300
                                 font-medium"
-                            >
-                                
-
-                                
-                                Sign up
-
-                            </Button>
-                        </div>
-                         <div>
-                            <Button
-                                className="bg-white px-6 py-1"
-                            >
-                                
-
-                                
-                                Sign in
-
-                            </Button>
-                        </div>
-                    </>
-
-                </div>
-			</div>
+							>
+								Sign up
+							</Button>
+						</div>
+						<div>
+							<Button className="bg-white px-6 py-1">Sign in</Button>
+						</div>
+					</>
+				</div>
+            </div>
+            {children}
 		</div>
 	);
 };
