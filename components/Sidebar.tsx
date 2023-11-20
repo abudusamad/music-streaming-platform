@@ -1,21 +1,18 @@
 "use client";
 
-import { HiHome } from "react-icons/hi";
-import { BiSearch } from "react-icons/bi";
-import { twMerge } from "tailwind-merge";
 import { usePathname } from "next/navigation";
+import { BiSearch } from "react-icons/bi";
+import { HiHome } from "react-icons/hi";
 
-
-import SidebarItem from "./SidebarItem";
-import Box from "./Box";
 import { useMemo } from "react";
+import Box from "./Box";
+import SidebarItem from "./SidebarItem";
 
 interface SidebarProps {
 	children: React.ReactNode;
-
 }
 
-const Sidebar = ({ children}: SidebarProps) => {
+const Sidebar = ({ children }: SidebarProps) => {
 	const pathname = usePathname();
 
 	const routes = useMemo(
@@ -37,10 +34,7 @@ const Sidebar = ({ children}: SidebarProps) => {
 	);
 
 	return (
-        <div
-            className="flex h-full" 
-		
-		>
+		<div className="flex h-full">
 			<div
 				className="
           hidden 
@@ -60,13 +54,11 @@ const Sidebar = ({ children}: SidebarProps) => {
 						))}
 					</div>
 				</Box>
-				<Box className="overflow-y-auto h-full">
-					Libaray
-				</Box>
-            </div>
-            <main>
-                {children}
-            </main>
+				<Box className="overflow-y-auto h-full">Libaray</Box>
+			</div>
+			<main className="h-full flex flex-1 overflow-y-auto py-2">
+				{children}
+			</main>
 		</div>
 	);
 };
