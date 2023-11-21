@@ -4,14 +4,14 @@ import useAuthModal from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 import { BiSearch } from "react-icons/bi";
 import { FaUserAlt } from "react-icons/fa";
 import { HiHome } from "react-icons/hi";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { twMerge } from "tailwind-merge";
 import Button from "./Button";
-import toast from "react-hot-toast";
-
+ 
 interface HeaderProps {
 	children: React.ReactNode;
 	className?: string;
@@ -19,11 +19,11 @@ interface HeaderProps {
 
 const Header = ({ children, className }: HeaderProps) => {
 	const router = useRouter();
-	const supabaseClient = useSupabaseClient();
 
 	const { user } = useUser();
-
 	const authModal = useAuthModal();
+	const supabaseClient = useSupabaseClient();
+
 
 	const handleLogout = async () => {
 		const { error } = await supabaseClient.auth.signOut();
@@ -31,8 +31,6 @@ const Header = ({ children, className }: HeaderProps) => {
 
 		if (error) {
 			toast.error(error.message);
-		} else {
-			toast
 		}
 	};
 	return (
