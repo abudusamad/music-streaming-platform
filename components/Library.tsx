@@ -1,8 +1,18 @@
+import useAuthModal from "@/hooks/useAuthModal";
+import { useUser } from "@/hooks/useUser";
 import { AiOutlinePlus } from "react-icons/ai";
-import { TbPlaylist } from "react-icons/tb";
 import { GoArrowRight } from "react-icons/go";
+import { TbPlaylist } from "react-icons/tb";
 
 const Library = () => {
+	const { user } = useUser();
+	const authModal = useAuthModal();
+
+	const onClick = () => {
+		if (!user) {
+			authModal.onOpen();
+		}
+	};
 	return (
 		<div className="flex flex-col">
 			<div className="flex items-center justify-between px-5 pt-4">
@@ -16,7 +26,7 @@ const Library = () => {
 					</p>
 				</div>
 				<div className="flex items-center justify-center gap-x-2">
-					<AiOutlinePlus
+					<AiOutlinePlus onClick={onClick}
 						className="text-neutral-400 hover:text-white transition rounded-full bg-black bg-opacity-20 hover:bg-opacity-30 p-1"
 						size={30}
 					/>
