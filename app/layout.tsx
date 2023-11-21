@@ -7,6 +7,7 @@ import SupabaseProvider from "@/providers/SupabaseProivder";
 import UserProvider from "@/providers/UserProvider";
 import ModalProvider from "@/providers/ModalProvider";
 import getActiveProductsWithPrices from "@/actions/getActiveProductWithPrice";
+import ToastProvider from "@/providers/ToastProvider";
 const font = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default async function RootLayout({
 	return (
 		<html lang="en">
 			<body className={font.className}>
+				<ToastProvider/>
 				<SupabaseProvider>
 					<UserProvider>
 						<ModalProvider product={products}/>

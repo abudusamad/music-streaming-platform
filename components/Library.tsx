@@ -1,7 +1,6 @@
 import { AiOutlinePlus } from "react-icons/ai";
-import { RxCaretRight } from "react-icons/rx";
 import { TbPlaylist } from "react-icons/tb";
-import { TooltipMenu } from "./Tooltip";
+import { GoArrowRight } from "react-icons/go";
 
 const Library = () => {
 	return (
@@ -12,8 +11,8 @@ const Library = () => {
 						className="text-neutral-400  hover:text-white transition"
 						size={26}
 					/>
-                    <p className="text-neutral-400 font-medium hover:text-white transition-all">
-                        Your Library
+					<p className="text-neutral-400 font-medium hover:text-white transition-all">
+						Your Library
 					</p>
 				</div>
 				<div className="flex items-center justify-center gap-x-2">
@@ -21,7 +20,7 @@ const Library = () => {
 						className="text-neutral-400 hover:text-white transition rounded-full bg-black bg-opacity-20 hover:bg-opacity-30 p-1"
 						size={30}
 					/>
-					<RxCaretRight
+					<GoArrowRight
 						className="text-neutral-400 hover:text-white transition rounded-full bg-black bg-opacity-20 hover:bg-opacity-30 p-1"
 						size={30}
 					/>
