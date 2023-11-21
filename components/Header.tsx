@@ -32,7 +32,7 @@ const Header = ({ children, className }: HeaderProps) => {
 		if (error) {
 			toast.error(error.message);
 		} else {
-			toast.success("Logged out successfully");
+			toast
 		}
 	};
 	return (
