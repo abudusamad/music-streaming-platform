@@ -79,7 +79,7 @@ const UploadModal = () => {
 				return toast.error("Failed image upload");
 			}
 
-			// Create record
+			// Insert song into database
 			const { error: supabaseError } = await supabaseClient
 				.from("songs")
 				.insert({

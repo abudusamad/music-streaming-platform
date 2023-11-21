@@ -1,11 +1,18 @@
 import useAuthModal from "@/hooks/useAuthModal";
 import useUploadModal from "@/hooks/useUploadModal";
 import { useUser } from "@/hooks/useUser";
+import { Song } from "@/types";
 import { AiOutlinePlus } from "react-icons/ai";
 import { GoArrowRight } from "react-icons/go";
 import { TbPlaylist } from "react-icons/tb";
 
-const Library = () => {
+interface LibraryProps {
+	songs: Song[]
+}
+
+const Library = ({
+	songs
+}:LibraryProps) => {
 	const { user } = useUser();
 	const authModal = useAuthModal();
 	const uploadModal = useUploadModal();

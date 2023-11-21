@@ -8,6 +8,7 @@ import UserProvider from "@/providers/UserProvider";
 import ModalProvider from "@/providers/ModalProvider";
 import getActiveProductsWithPrices from "@/actions/getActiveProductWithPrice";
 import ToastProvider from "@/providers/ToastProvider";
+import getSongByUserId from "@/actions/getSongByUserId";
 const font = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -15,12 +16,15 @@ export const metadata: Metadata = {
 	description: "Listen to music",
 };
 
+export const revalidate = 0;
+
 export default async function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 	}) {
 	const products = await getActiveProductsWithPrices();
+	const userSongs = await getSongByUserId();
 	return (
 		<html lang="en">
 			<body className={font.className}>
@@ -28,7 +32,8 @@ export default async function RootLayout({
 				<SupabaseProvider>
 					<UserProvider>
 						<ModalProvider product={products}/>
-						<Sidebar>{children}</Sidebar>
+						<Sidebar songs={userSongs}>
+							{children}</Sidebar>
 					</UserProvider>
 				</SupabaseProvider>
 			</body>
