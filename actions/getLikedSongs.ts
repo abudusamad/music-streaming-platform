@@ -16,11 +16,11 @@ const getLikedSongs = async (): Promise<Song[]> => {
 		.select("*, songs(*)")
 		.eq("user_id", session?.user?.id)
 		.order("created_at", { ascending: false });
-	if (!data) {
-		return [];
-	}
-	return data.map((song) => ({
-		...song.songs,
+
+	if (!data) return [];
+
+	return data.map((item) => ({
+		...item.songs,
 	}));
 };
 
