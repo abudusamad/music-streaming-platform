@@ -3,13 +3,13 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
 
-import SupabaseProvider from "@/providers/SupabaseProivder";
-import UserProvider from "@/providers/UserProvider";
-import ModalProvider from "@/providers/ModalProvider";
 import getActiveProductsWithPrices from "@/actions/getActiveProductWithPrice";
-import ToastProvider from "@/providers/ToastProvider";
 import getSongByUserId from "@/actions/getSongByUserId";
 import Player from "@/components/Player";
+import ModalProvider from "@/providers/ModalProvider";
+import SupabaseProvider from "@/providers/SupabaseProivder";
+import ToastProvider from "@/providers/ToastProvider";
+import UserProvider from "@/providers/UserProvider";
 const font = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,19 +23,18 @@ export default async function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
-	}) {
+}) {
 	const products = await getActiveProductsWithPrices();
 	const userSongs = await getSongByUserId();
 	return (
 		<html lang="en">
 			<body className={font.className}>
-				<ToastProvider/>
+				<ToastProvider />
 				<SupabaseProvider>
 					<UserProvider>
-						<ModalProvider product={products}/>
-						<Sidebar songs={userSongs}>
-							{children}</Sidebar>
-						<Player/>
+						<ModalProvider product={products} />
+						<Sidebar songs={userSongs}>{children}</Sidebar>
+						<Player />
 					</UserProvider>
 				</SupabaseProvider>
 			</body>
