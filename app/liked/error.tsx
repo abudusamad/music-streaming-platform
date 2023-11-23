@@ -2,10 +2,13 @@
 
 import Box from "@/components/Box";
 
-const Erro = () => {
+const Error = () => {
 	return (
 		<Box className="flex items-center justify-center h-full">
 			<div className="text-neural-400">Something went wrong</div>
 		</Box>
 	);
 };
+
+
+export default Error;
