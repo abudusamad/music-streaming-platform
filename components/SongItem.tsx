@@ -4,8 +4,8 @@ import Image from "next/image";
 import PlayButton from "./PlayButton";
 
 interface SongItemProps {
-	onClick: (id: string) => void;
 	data: Song;
+	onClick: (id: string) => void;
 }
 
 const SongItems = ({ onClick, data }: SongItemProps) => {
@@ -28,6 +28,7 @@ const SongItems = ({ onClick, data }: SongItemProps) => {
 				</p>
 			</div>
 			<div
+				onClick={() => onClick(data.id)}
 				className="
         absolute bottom-24 right-5"
 			>
