@@ -11,7 +11,7 @@ import { HiHome } from "react-icons/hi";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { twMerge } from "tailwind-merge";
 import Button from "./Button";
- 
+
 interface HeaderProps {
 	children: React.ReactNode;
 	className?: string;
@@ -23,7 +23,6 @@ const Header = ({ children, className }: HeaderProps) => {
 	const { user } = useUser();
 	const authModal = useAuthModal();
 	const supabaseClient = useSupabaseClient();
-
 
 	const handleLogout = async () => {
 		const { error } = await supabaseClient.auth.signOut();
