@@ -22,7 +22,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
 	const player = usePlayer();
 	const [volume, setVolume] = useState(1);
 	const [isPlaying, setIsPlaying] = useState(false);
-
+		
 	const Icon = isPlaying ? BsPauseFill : BsPlayFill;
 	const VolumeIcon = volume === 0 ? HiSpeakerXMark : HiSpeakerWave;
 

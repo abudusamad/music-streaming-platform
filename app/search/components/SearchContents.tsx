@@ -13,7 +13,7 @@ const SearchContent = ({ songs }: SearchContentProps) => {
 	const onPlay = useOnPlay(songs);
 	if (songs.length === 0) {
 		return (
-			<div className="flex flex-col items-center justify-center h-full w-full">
+			<div className="flex flex-col items-center justify-center">
 				<p className="text-neutral-400 text-2xl font-semibold">
 					No songs found
 				</p>

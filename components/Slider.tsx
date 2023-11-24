@@ -1,15 +1,17 @@
 "use client";
 
 import * as RadixSlider from "@radix-ui/react-slider";
+import React from "react";
 
 interface SliderProps {
     value?: number;
-    onChange?: (value: number) => void;
+    onChange?: (value:number) => void;
 }
 
-const Slider = ({ value=1, onChange }: SliderProps) => {
-    const handleChange = (neValue: number[]) => {
-        onChange?.(neValue[0]);
+const Slider = ({ value = 1, onChange }: SliderProps) => {
+    const [setValue] = React.useState([1]);
+    const handleChange = (newValue: number[]) => {
+        onChange?.(newValue[0]);
     }
 
     return (
