@@ -6,6 +6,7 @@ import { Song } from "@/types";
 import { AiOutlinePlus } from "react-icons/ai";
 import { GoArrowRight } from "react-icons/go";
 import { TbPlaylist } from "react-icons/tb";
+import { Hint } from "./Hint";
 import MediaItem from "./MediaItem";
 
 interface LibraryProps {
@@ -39,11 +40,13 @@ const Library = ({ songs }: LibraryProps) => {
 				</div>
 
 				<div className="flex items-center justify-center gap-x-2">
-					<AiOutlinePlus
-						onClick={onClick}
-						className="text-neutral-400 hover:text-white transition rounded-full bg-black bg-opacity-20 hover:bg-opacity-30 p-1"
-						size={30}
-					/>
+					<Hint sideOffset={12} description="Add music to library" side="top">
+						<AiOutlinePlus
+							onClick={onClick}
+							className="text-neutral-400 hover:text-white transition rounded-full bg-black bg-opacity-20 hover:bg-opacity-30 p-1"
+							size={30}
+						/>
+					</Hint>
 					<GoArrowRight
 						className="text-neutral-400 hover:text-white transition rounded-full bg-black bg-opacity-20 hover:bg-opacity-30 p-1"
 						size={30}

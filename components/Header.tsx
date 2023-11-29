@@ -1,17 +1,18 @@
 "use client";
 
 import useAuthModal from "@/hooks/useAuthModal";
+import usePlayer from "@/hooks/usePlayer";
 import { useUser } from "@/hooks/useUser";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
-import { BiSearch } from "react-icons/bi";
+import { BiBell, BiSearch } from "react-icons/bi";
 import { FaUserAlt } from "react-icons/fa";
 import { HiHome } from "react-icons/hi";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { twMerge } from "tailwind-merge";
 import Button from "./Button";
-import usePlayer from "@/hooks/usePlayer";
+import { Hint } from "./Hint";
 
 interface HeaderProps {
 	children: React.ReactNode;
@@ -45,20 +46,22 @@ const Header = ({ children, className }: HeaderProps) => {
 		>
 			<div className="w-full mb-4 flex items-center justify-between">
 				<div className="hidden md:flex gap-x-2 items-center">
-					<button
-						onClick={() => router.back()}
-						className="rounded-full
-                    bg-black
-                    flex
+					<Hint description="Go back" sideOffset={10}>
+						<button
+							onClick={() => router.back()}
+							className="rounded-full
+						bg-black
+						flex
                     items-center
                     justify-center
                     cursor-pointer
                     hover:opacity-75
                     tranistion
                     "
-					>
-						<RxCaretLeft size={35} />
-					</button>
+						>
+							<RxCaretLeft size={35} />
+						</button>
+					</Hint>
 					<button
 						onClick={() => router.forward()}
 						className="rounded-full
@@ -109,15 +112,19 @@ const Header = ({ children, className }: HeaderProps) => {
 				<div className="flex justify-between items-center gap-x-4">
 					{user ? (
 						<div className="flex gap-x-4 items-center">
-							<Button onClick={handleLogout} className="bg-white px-6 py-2">
-								Logout
-							</Button>
-							<Button
-								onClick={() => router.push("/account")}
-								className="bg-white"
-							>
-								<FaUserAlt />
-							</Button>
+							<Hint description="What's new" sideOffset={10}>
+								<Button onClick={handleLogout} className="bg-black">
+									<BiBell className="text-white" size={20} />
+								</Button>
+							</Hint>
+							<Hint sideOffset={10} description={user?.email!} >
+								<Button
+									onClick={() => router.push("/account")}
+									className="bg-black"
+								>
+									<FaUserAlt className="text-white" />
+								</Button>
+							</Hint>
 						</div>
 					) : (
 						<>
