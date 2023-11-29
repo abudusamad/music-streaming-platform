@@ -27,8 +27,8 @@ const LikedContent: React.FC<LikedContentProps> = ({ songs }) => {
 
     if (songs.length === 0) {
         return (
-            <div className="flex flex-col items-center justify-center">
-                <p className="text-neutral-400 text-3xl font-semibold">
+            <div className="flex flex-col items-center justify-center ">
+                <p className="text-neutral-400 text-3xl font-semibold my-4">
                     No songs Liked
                 </p>
             </div>
