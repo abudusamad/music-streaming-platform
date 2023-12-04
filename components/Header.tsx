@@ -13,6 +13,7 @@ import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { twMerge } from "tailwind-merge";
 import Button from "./Button";
 import { Hint } from "./Hint";
+import { FormPopover } from "./form/form-poppover";
 
 interface HeaderProps {
 	children: React.ReactNode;
@@ -59,6 +60,7 @@ const Header = ({ children, className }: HeaderProps) => {
                     tranistion
                     "
 						>
+
 							<RxCaretLeft size={35} />
 						</button>
 					</Hint>
@@ -117,13 +119,16 @@ const Header = ({ children, className }: HeaderProps) => {
 									<BiBell className="text-white" size={20} />
 								</Button>
 							</Hint>
-							<Hint sideOffset={10} description={user?.email!} >
+							<Hint sideOffset={10} description={user?.email!}>
+								<FormPopover sideOffset={10} side="bottom">
 								<Button
-									onClick={() => router.push("/account")}
+									
 									className="bg-black"
 								>
+
 									<FaUserAlt className="text-white" />
 								</Button>
+									</FormPopover>
 							</Hint>
 						</div>
 					) : (
