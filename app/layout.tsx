@@ -6,15 +6,25 @@ import "./globals.css";
 import getActiveProductsWithPrices from "@/actions/getActiveProductWithPrice";
 import getSongByUserId from "@/actions/getSongByUserId";
 import Player from "@/components/Player";
+import { siteConfig } from "@/config/site";
 import ModalProvider from "@/providers/ModalProvider";
 import SupabaseProvider from "@/providers/SupabaseProivder";
 import ToastProvider from "@/providers/ToastProvider";
 import UserProvider from "@/providers/UserProvider";
 const font = Figtree({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-	title: "music streaming app",
-	description: "Listen to music",
+export const metata: Metadata = {
+	title: {
+		default: siteConfig.name,
+		template: `${siteConfig.name} `,
+	},
+	description: siteConfig.description,
+	icons: [
+		{
+			url: "/logo.svg",
+			href: "/logo.svg",
+		},
+	],
 };
 
 export const revalidate = 0;
