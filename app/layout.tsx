@@ -5,6 +5,7 @@ import "./globals.css";
 
 import getActiveProductsWithPrices from "@/actions/getActiveProductWithPrice";
 import getSongByUserId from "@/actions/getSongByUserId";
+import ClientOnly from "@/components/Client-Only";
 import Player from "@/components/Player";
 import { siteConfig } from "@/config/site";
 import ModalProvider from "@/providers/ModalProvider";
@@ -39,14 +40,16 @@ export default async function RootLayout({
 	return (
 		<html lang="en">
 			<body className={font.className}>
-				<ToastProvider />
-				<SupabaseProvider>
-					<UserProvider>
-						<ModalProvider product={products} />
-						<Sidebar songs={userSongs}>{children}</Sidebar>
-						<Player />
-					</UserProvider>
-				</SupabaseProvider>
+				<ClientOnly>
+					<ToastProvider />
+					<SupabaseProvider>
+						<UserProvider>
+							<ModalProvider product={products} />
+							<Sidebar songs={userSongs}>{children}</Sidebar>
+							<Player />
+						</UserProvider>
+					</SupabaseProvider>
+				</ClientOnly>
 			</body>
 		</html>
 	);
