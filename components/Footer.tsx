@@ -1,9 +1,11 @@
 const Footer = () => {
+	const currentYear = new Date().getFullYear();
+
 	return (
 		<footer className="bg-neutral-900 text-white p-6 mt-auto">
 			<div className="flex justify-between">
 				<div>
-					<p>© 2022 Spotify AB</p>
+					<p className="text-sm font-light">© {currentYear} Spotify AB</p>
 				</div>
 				<div className="space-x-4">
 					<a href="/about" className="text-white">
