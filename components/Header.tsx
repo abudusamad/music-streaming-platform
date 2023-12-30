@@ -146,7 +146,7 @@ const Header = ({ children, className }: HeaderProps) => {
 							<div>
 								<Button
 									onClick={authModal.onOpen}
-									className="bg-white px-6 py-1"
+									className="bg-white px-6 py-3"
 								>
 									Sign in
 								</Button>
