@@ -72,7 +72,7 @@ const Footer = () => {
 				</div>
 			</div>
 
-			<hr className="mb-8 opacity-30" />
+			<hr className="mb-8 opacity-10" />
 
 			<div className="flex flex-wrap justify-between gap-4 ">
 				<div className="flex space-x-4 ">

@@ -60,7 +60,6 @@ const Header = ({ children, className }: HeaderProps) => {
                     tranistion
                     "
 						>
-
 							<RxCaretLeft size={35} />
 						</button>
 					</Hint>
@@ -115,20 +114,40 @@ const Header = ({ children, className }: HeaderProps) => {
 					{user ? (
 						<div className="flex gap-x-4 items-center">
 							<Hint description="What's new" sideOffset={10}>
-								<Button onClick={handleLogout} className="bg-black">
+								<Button onClick={()=>router.push("/content-feed")} className="bg-black">
 									<BiBell className="text-white" size={20} />
 								</Button>
 							</Hint>
 							<Hint sideOffset={10} description={user?.email!}>
-								<FormPopover sideOffset={10} side="bottom">
-								<Button
-									
-									className="bg-black"
+								<FormPopover
+									content={
+										<div className="flex flex-col ">
+											<p
+												className="w-full cursor-pointer rounded-sm hover:bg-neutral-900 p-2 "
+												onClick={() => router.push("/profile")}
+											>
+												Profile
+											</p>
+											<p
+												className="w-full cursor-pointer rounded-sm  hover:bg-neutral-900 p-2 "
+												onClick={() => router.push("/settings")}
+											>
+												Settings
+											</p>
+											<hr className=" opacity-10" />
+											<div
+												onClick={handleLogout}
+												className="w-full cursor-pointer rounded-sm hover:bg-neutral-900 p-2"
+											>
+												Logout
+											</div>
+										</div>
+									}
 								>
-
-									<FaUserAlt className="text-white" />
-								</Button>
-									</FormPopover>
+									<Button className="bg-black">
+										<FaUserAlt className="text-white" />
+									</Button>
+								</FormPopover>
 							</Hint>
 						</div>
 					) : (
