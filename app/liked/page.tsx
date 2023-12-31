@@ -3,6 +3,7 @@ import getLikedSongs from "@/actions/getLikedSongs";
 import Header from "@/components/Header";
 import Image from "next/image";
 import LikedContent from "./_components/LikedContent";
+import Footer from "@/components/Footer";
 
 export const revalidate = 0;
 
@@ -31,6 +32,9 @@ const LikedPage = async () => {
 				</div>
 			</Header>
 			<LikedContent songs={songs} />
+			<div>
+				<Footer/>
+			</div>
 		</div>
 	);
 };
