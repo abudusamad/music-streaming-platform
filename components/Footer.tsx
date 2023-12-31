@@ -2,7 +2,6 @@ import React from "react";
 import { CiFacebook } from "react-icons/ci";
 import { FaInstagram, FaTwitter } from "react-icons/fa";
 
-interface FooterProps {}
 
 interface LinkListProps {
 	title?: string;
@@ -38,7 +37,7 @@ const SocialMediaIcon: React.FC<{ icon: React.ElementType }> = ({
 	</p>
 );
 
-const Footer: React.FC<FooterProps> = () => {
+const Footer = () => {
 	const currentYear = new Date().getFullYear();
 
 	return (
