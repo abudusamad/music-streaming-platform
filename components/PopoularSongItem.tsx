@@ -12,7 +12,7 @@ const PopularSongsItem = ({ onClick, data }: PopularSongItemProps) => {
 	const imagePath = UseLoadImage(data);
 
 	return (
-		<div className="relative group flex flex-col items-center justify-center overflow-hidden gap-x-4cursor-pointer hover:bg-neutral-400/10 transition p-3">
+		<div className="relative group flex flex-col items-center justify-center overflow-hidden gap-x-4cursor-pointer hover:bg-neutral-400/5 transition p-3">
 			<div className="relative aspect-square w-full h-full rounded-full overflow-hidden">
 				<Image
 					fill
@@ -21,16 +21,19 @@ const PopularSongsItem = ({ onClick, data }: PopularSongItemProps) => {
 					className="object-cover"
 				/>
 			</div>
-			<div className="flex flex-col items-start w-full pt-4 gap-y-1">
+			<div className="flex flex-col items-start w-full pt-4">
 				
 				<p className="text-neutral-100 text-sm pb-4 w-full truncate">
 				{data.author}
+				</p>
+				<p className="text-neutral-400 text-sm ">
+					Artist
 				</p>
 			</div>
 			<div
 				onClick={() => onClick(data.id)}
 				className="
-        absolute bottom-24 right-5"
+        absolute bottom-16 right-5"
 			>
 				<PlayButton />
 			</div>
