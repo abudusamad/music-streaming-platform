@@ -127,7 +127,7 @@ const Header = ({ children, className }: HeaderProps) => {
 										<div className="flex flex-col ">
 											<p
 												className="w-full cursor-pointer rounded-sm hover:bg-neutral-900 p-2 "
-												onClick={() => router.push("/profile")}
+												onClick={() => router.push("/account")}
 											>
 												Profile
 											</p>

@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import AccountContent from "./components/AccountContent";
+import AccountContent from "./_components/AccountContent";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ const AccountSettingPage = () => {
 					<h1 className="text-white text-3xl font-semibold">Account Settings</h1>
 				</div>
             </Header>
-            <AccountContent/>
+      
 		</div>
 	);
 };
