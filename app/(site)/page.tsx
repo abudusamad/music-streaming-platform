@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
 import { Metadata } from "next";
 import PageContent from "./_components/PageContent";
+import PopularArtist from "./_components/PopularArtist";
 
 export const revalidate = 0;
 
@@ -50,6 +51,12 @@ export default async function Home({}) {
 					</div>
 				</div>
 			</Header>
+			<div className="mt-2 mb-7 px-6">
+				<div className="flex justify-between items-center">
+					<h1 className="text-white text-3xl font-semibold">Popular Artist</h1>
+				</div>
+				<PopularArtist songs={songs} />
+			</div>
 			<div className="mt-2 mb-7 px-6">
 				<div className="flex justify-between items-center">
 					<h1 className="text-white text-3xl font-semibold">Newest Songs</h1>
