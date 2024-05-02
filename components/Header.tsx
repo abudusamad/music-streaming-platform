@@ -114,7 +114,10 @@ const Header = ({ children, className }: HeaderProps) => {
 					{user ? (
 						<div className="flex gap-x-4 items-center">
 							<Hint description="What's new" sideOffset={10}>
-								<Button onClick={()=>router.push("/content-feed")} className="bg-black">
+								<Button
+									onClick={() => router.push("/content-feed")}
+									className="bg-black"
+								>
 									<BiBell className="text-white" size={20} />
 								</Button>
 							</Hint>
