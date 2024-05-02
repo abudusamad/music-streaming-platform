@@ -16,7 +16,7 @@ const font = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: {
-		template:`%s | ${siteConfig.title}`,
+		template:`${siteConfig.title} - %s`,
 		default: siteConfig.title,
 	},
 	description: siteConfig.description,

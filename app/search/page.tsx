@@ -3,8 +3,15 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import SearchInput from "@/components/SearchInput";
 import SearchContent from "./_components/SearchContents";
+import { Metadata } from "next";
 
 export const revalidate = 0;
+
+export const metadata: Metadata = {
+	title: "Search",
+	description: "Search page",
+};
+
 
 interface SearchProps {
 	searchParams: { title: string };

@@ -1,5 +1,11 @@
 import Header from "@/components/Header";
 import AccountContent from "./components/AccountContent";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+      title: "Account Settings",
+      description: "Account settings page",
+};
 
 const AccountSettingPage = () => {
 	return (
