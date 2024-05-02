@@ -8,7 +8,7 @@ import { Metadata } from "next";
 
 export const revalidate = 0;
 
-export const metatada: Metadata = {
+export const metadata: Metadata = {
 	title:"Liked Songs",
 	description:"Liked songs page",
 }
