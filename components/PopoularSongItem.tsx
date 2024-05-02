@@ -24,7 +24,7 @@ const PopularSongsItem = ({ onClick, data }: PopularSongItemProps) => {
 			<div className="flex flex-col items-start w-full pt-4">
 				
 				<p className="text-neutral-100 text-sm pb-4 w-full truncate">
-				{data.author}
+				{data.author.split(" ,")[0]}
 				</p>
 				<p className="text-neutral-400 text-sm ">
 					Artist
