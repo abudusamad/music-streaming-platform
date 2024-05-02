@@ -1,10 +1,25 @@
 import getSongs from "@/actions/getSongs";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
+import { Metadata } from "next";
 import PageContent from "./_components/PageContent";
-import Footer from "@/components/Footer";
 
 export const revalidate = 0;
+
+export const metada: Metadata = {
+	title: {
+		template: `%s | Music app`,
+		default: "Listen to good music",
+	},
+	description: "Listen to good music",
+	icons: [
+		{
+			url: "/logo.png",
+			href: "/logo.png",
+		},
+	],
+};
 
 export default async function Home({}) {
 	const songs = await getSongs();
@@ -43,7 +58,7 @@ export default async function Home({}) {
 				</div>
 				<PageContent songs={songs} />
 			</div>
-			<Footer/>
+			<Footer />
 		</div>
 	);
 }

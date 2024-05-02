@@ -1,4 +1,5 @@
 export const siteConfig = {
-    name: "Mastech",
+    title: "Music app",
     description: " Listen to good music",
+    
 }

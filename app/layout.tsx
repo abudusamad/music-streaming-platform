@@ -14,19 +14,6 @@ import ToastProvider from "@/providers/ToastProvider";
 import UserProvider from "@/providers/UserProvider";
 const font = Figtree({ subsets: ["latin"] });
 
-export const metata: Metadata = {
-	title: {
-		default: siteConfig.name,
-		template: `%s | ${siteConfig.name}`,
-	},
-	description: siteConfig.description,
-	icons: [
-		{
-			url: "/logo.png",
-			href: "/logo.png",
-		},
-	],
-};
 
 export const revalidate = 0;
 
