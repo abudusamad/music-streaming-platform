@@ -1,5 +1,5 @@
 export const siteConfig = {
-    title: "Music app",
+    title: "Spotfy ",
     description: " Listen to good music",
     
 }

@@ -4,8 +4,14 @@ import Header from "@/components/Header";
 import Image from "next/image";
 import LikedContent from "./_components/LikedContent";
 import Footer from "@/components/Footer";
+import { Metadata } from "next";
 
 export const revalidate = 0;
+
+export const metatada: Metadata = {
+	title:"Liked Songs",
+	description:"Liked songs page",
+}
 
 const LikedPage = async () => {
     const songs = await getLikedSongs();

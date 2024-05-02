@@ -9,20 +9,6 @@ import PopularArtist from "./_components/PopularArtist";
 
 export const revalidate = 0;
 
-export const metada: Metadata = {
-	title: {
-		template: `%s | Music app`,
-		default: "Listen to good music",
-	},
-	description: "Listen to good music",
-	icons: [
-		{
-			url: "/logo.png",
-			href: "/logo.png",
-		},
-	],
-};
-
 export default async function Home({}) {
 	const songs = await getSongs();
 	return (
