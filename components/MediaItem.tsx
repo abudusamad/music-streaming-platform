@@ -10,7 +10,7 @@ interface MediaItemProps {
 	onClick?: (id: string) => void;
 }
 
-const MediaItemComponent = ({ data, onClick }: MediaItemProps) => {
+export const MediaItemComponent = ({ data, onClick }: MediaItemProps) => {
 	const imageUrl = useLoadImage(data);
 
 	const handleClick = () => {
