@@ -58,7 +58,6 @@ export const DashboardSkeleton = () => {
 						<Skeleton key={i} />
 					))}
 				</div>
-					
 			</div>
 			<div className="mt-2 mb-7 px-6">
 				<div className="flex justify-between items-center">
@@ -74,4 +73,26 @@ export const DashboardSkeleton = () => {
 			</div>
 		</div>
 	);
-}
+};
+
+export const SkeletonMediaItem = () => {
+	return (
+		<div
+			className="
+		flex 
+        items-center 
+        gap-x-3 
+        w-full 
+        p-2 
+        rounded-md animate-pulse"
+		>
+			<div className="relative rounded-md min-h-[48px] min-w-[48px] overflow-hidden">
+				<Skeleton className="absolute inset-0 bg-neutral-800" />
+			</div>
+			<div className="flex flex-col gap-y-1 overflow-hidden">
+				<Skeleton className="h-4 bg-neutral-800 w-80" />
+				<Skeleton className="h-4 bg-neutral-800 w-1/2" />
+			</div>
+		</div>
+	);
+};

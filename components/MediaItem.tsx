@@ -4,31 +4,14 @@ import Image from "next/image";
 
 import useLoadImage from "@/hooks/useLoadImage";
 import { Song } from "@/types";
-import { useEffect, useState } from "react";
-
-type MediaItemComponent = React.FC<MediaItemProps> & {
-	Skeleton: React.FC;
-};
 
 interface MediaItemProps {
 	data: Song;
 	onClick?: (id: string) => void;
 }
 
-const MediaItem: MediaItemComponent = ({ data, onClick }) => {
-  const imageUrl = useLoadImage(data);
-  const [isLoading, setIsLoading] = useState(true); 
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 500)
-    return () => clearTimeout(timer)
-  }, [])
-  
-  if (isLoading) {
-    return <MediaItem.Skeleton />
-  }
+const MediaItemComponent = ({ data, onClick }: MediaItemProps) => {
+	const imageUrl = useLoadImage(data);
 
 	const handleClick = () => {
 		if (onClick) {
@@ -73,18 +56,3 @@ const MediaItem: MediaItemComponent = ({ data, onClick }) => {
 		</div>
 	);
 };
-
-MediaItem.Skeleton = function SkeletonMediaItem() {
-	return (
-		<div className="flex items-center gap-x-3 w-full p-2 rounded-md">
-			<div className="relative rounded-md min-h-[48px] min-w-[48px] overflow-hidden">
-				<div className="absolute inset-0 bg-neutral-800 animate-pulse"></div>
-			</div>
-			<div className="flex flex-col gap-y-1 overflow-hidden">
-				<div className="h-4 bg-neutral-800 animate-pulse rounded w-1/2"></div>
-				<div className="h-4 bg-neutral-800 animate-pulse rounded w-1/4"></div>
-			</div>
-		</div>
-	);
-};
-export default MediaItem;
