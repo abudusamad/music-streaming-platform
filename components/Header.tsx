@@ -148,7 +148,7 @@ const Header = ({ children, className }: HeaderProps) => {
 									}
 								>
 									<Button className="bg-black">
-										<FaUserAlt className="text-white" />
+										
 									</Button>
 								</FormPopover>
 							</Hint>
@@ -168,7 +168,7 @@ const Header = ({ children, className }: HeaderProps) => {
 							<div>
 								<Button
 									onClick={authModal.onOpen}
-									className="bg-white px-6 py-3"
+									className="bg-white px-6 py-1"
 								>
 									Sign in
 								</Button>
