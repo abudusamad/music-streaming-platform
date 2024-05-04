@@ -3,7 +3,7 @@
 import LikeButton from "@/components/LikeButton";
 import MediaItem from "@/components/MediaItem";
 import useOnPlay from "@/hooks/useOnPlay";
-import { SkeletonMediaItem } from "@/loading/skeletons";
+import { LikeButtonSkeleton, SkeletonMediaItem } from "@/loading/skeletons";
 import { Song } from "@/types";
 import { Suspense } from "react";
 
@@ -35,7 +35,9 @@ const SearchContent = ({ songs }: SearchContentProps) => {
 							/>
 						</Suspense>
 					</div>
-					<LikeButton songId={song.id} />
+					<Suspense fallback={<LikeButtonSkeleton />}>
+						<LikeButton songId={song.id} />
+					</Suspense>
 				</div>
 			))}
 		</div>

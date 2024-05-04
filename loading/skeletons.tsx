@@ -96,3 +96,24 @@ export const SkeletonMediaItem = () => {
 		</div>
 	);
 };
+
+export const LikeButtonSkeleton = () => {
+	return (
+		<div className="flex items-center gap-x-4 w-full animate-pulse">
+			<Skeleton className="rounded-full bg-neutral-800 w-8 h-8" />
+		</div>
+	);
+};
+
+export const SearchSkeleton = () => {
+	return (
+		<div className="flex flex-col gap-y-2 w-full px-6">
+			<div className="flex items-center gap-x-4 w-full">
+				<div className="flex-1">
+					<SkeletonMediaItem />
+				</div>
+				<LikeButtonSkeleton />
+			</div>
+		</div>
+	);
+};
