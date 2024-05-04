@@ -3,7 +3,9 @@
 import LikeButton from "@/components/LikeButton";
 import MediaItem from "@/components/MediaItem";
 import useOnPlay from "@/hooks/useOnPlay";
+import { SkeletonMediaItem } from "@/loading/skeletons";
 import { Song } from "@/types";
+import { Suspense } from "react";
 
 interface SearchContentProps {
 	songs: Song[];
@@ -23,15 +25,15 @@ const SearchContent = ({ songs }: SearchContentProps) => {
 	return (
 		<div className="flex flex-col gap-y-2 w-full px-6">
 			{songs.map((song) => (
-                <div key={song.id}
-                    className="flex items-center gap-x-4 w-full"
-                >
-					<div  className="flex-1">
-						<MediaItem
-							key={song.id}
-							onClick={(id: string) => onPlay(id)}
-							data={song}
-						/>
+				<div key={song.id} className="flex items-center gap-x-4 w-full">
+					<div className="flex-1">
+						<Suspense fallback={<SkeletonMediaItem />}>
+							<MediaItem
+								key={song.id}
+								onClick={(id: string) => onPlay(id)}
+								data={song}
+							/>
+						</Suspense>
 					</div>
 					<LikeButton songId={song.id} />
 				</div>

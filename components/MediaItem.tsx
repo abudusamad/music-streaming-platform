@@ -10,7 +10,7 @@ interface MediaItemProps {
 	onClick?: (id: string) => void;
 }
 
-export const MediaItemComponent = ({ data, onClick }: MediaItemProps) => {
+const MediaItemComponent = ({ data, onClick }: MediaItemProps) => {
 	const imageUrl = useLoadImage(data);
 
 	const handleClick = () => {
@@ -56,3 +56,6 @@ export const MediaItemComponent = ({ data, onClick }: MediaItemProps) => {
 		</div>
 	);
 };
+
+
+export default MediaItemComponent;
